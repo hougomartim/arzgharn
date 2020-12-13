@@ -2,6 +2,10 @@
 [
   {
     "register_status": {
+      "0":{
+        "password":"string",
+        "password2": "string"
+      },
       "1": {
         "codemelli": "string",
         "fullname": "fullname",
@@ -26,6 +30,21 @@
       },
       "response": {
         "message": "code send to the {}"
+      }
+    }
+  },
+  },
+  {
+    "url": "application/signup_mobile_verification/",
+    "body": {
+      "type": "object",
+      "method": "post",
+      "data": {
+        "username": "string",
+        "code": "string optional"
+      },
+      "response": {
+        "message": "multiple message"
       }
     }
   },
@@ -343,6 +362,36 @@
       "permission": "IsSuperUser",
       "method": "post",
       "description": "change register_status",
+      "response": ""
+    }
+  }
+  },
+  {
+    "url": "application/add_password/",
+    "body": {
+      "type": "object",
+      "data": {
+        "password": "string",
+        "password2": "string"
+      },
+      "permission": "IsAuthenticated",
+      "method": "post",
+      "description": "change password",
+      "response": "success"
+    }
+  }
+  },
+  {
+    "url": "application/signup_mobile_verification/",
+    "body": {
+      "type": "object",
+      "data": {
+        "username": "string required",
+        "code": "string optional"
+      },
+      "permission": "AllowAny",
+      "method": "post",
+      "description": "use in signup page",
       "response": ""
     }
   }
